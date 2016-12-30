@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Marketing Event" max_length="40" name="x_26038_marketing_marketing_event" type="collection">
+        <element label="Budget" max_length="40" name="budget" type="currency"/>
+        <element label="Category" max_length="32" name="category" reference="x_26038_marketing_category" type="reference"/>
+        <element choice="1" label="City" max_length="40" name="city" type="choice">
+            <choice>
+                <element label="Dallas" sequence="0" value="Dallas"/>
+                <element label="Kansas City" sequence="1" value="Kansas City"/>
+                <element label="London" sequence="2" value="London"/>
+                <element label="San Jose" sequence="3" value="San Jose"/>
+                <element label="Portland" sequence="4" value="Portland"/>
+                <element label="Sydney" sequence="5" value="Sydney"/>
+            </choice>
+        </element>
+        <element label="End date" max_length="40" name="end_date" type="glide_date"/>
+        <element label="Incident Subtype" max_length="100" name="incident_subtype" read_only="true" type="string"/>
+        <element label="Incident Type" max_length="100" name="incident_type" read_only="true" type="string"/>
+        <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element label="Number of attendees expected" max_length="40" name="number_of_attendees_expected" type="integer"/>
+        <element label="Number of attendees registered" max_length="40" name="number_of_attendees_registered" type="integer"/>
+        <element label="Sponsor" max_length="40" name="sponsor" type="string"/>
+        <element label="Start date" max_length="40" name="start_date" type="glide_date"/>
+        <index name="index">
+            <element name="category"/>
+        </index>
+    </element>
+</database>

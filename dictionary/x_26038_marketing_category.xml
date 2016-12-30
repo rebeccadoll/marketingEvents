@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Category" max_length="40" name="x_26038_marketing_category" type="collection">
+        <element display="true" label="Subtype" max_length="100" name="category" type="string"/>
+        <element label="Incident Type" max_length="100" name="incident_type" type="string"/>
+    </element>
+</database>

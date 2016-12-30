@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>category</field>
+        <global>true</global>
+        <messages/>
+        <name>Populate types</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+
+	 var typeGR = g_form.getReference('category', doAlert); // doAlert is our callback function
+	
+	function doAlert(category) { //reference is passed into callback as first arguments
+	  if (category.incident_type == 'Self'){
+		 g_form.setValue('incident_type', category.category);
+		  g_form.setValue('incident_subtype', '');
+	  } else {
+		  g_form.setValue('incident_type', category.incident_type);
+		  g_form.setValue('incident_subtype', category.category);
+	  }
+		  
+	}
+	
+	
+
+	
+//    if(gr.incident_type == "Self"){
+// 	   g_form.setValue('incident_type', gr.category);
+//    } else {
+// 	   g_form.setValue('incident_type', gr.incident_type);
+// 	   g_form.setValue('incident_subtype', gr.category);
+//    }
+	
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-11-14 21:55:39</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>037cf9d6db03220008987d9ebf9619de</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Populate types</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Marketing Events Application" source="x_26038_marketing">e38c26b00f435600a13709ece1050ef2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Marketing Events Application">e38c26b00f435600a13709ece1050ef2</sys_scope>
+        <sys_update_name>sys_script_client_037cf9d6db03220008987d9ebf9619de</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-11-14 22:04:46</sys_updated_on>
+        <table>x_26038_marketing_marketing_event</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
